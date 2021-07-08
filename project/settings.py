@@ -1,3 +1,4 @@
+import django_on_heroku # put this at the top of the file
 import os
 from pathlib import Path
 from dotenv import load_dotenv
@@ -6,11 +7,8 @@ load_dotenv()
 
 from pathlib import Path
 
-import django_on_heroku # put this at the top of the file
-
 # all the rest of the settings file...
 
-django_on_heroku.settings(locals()) # put this last
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -162,3 +160,5 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'jwt_auth.User'
+
+django_on_heroku.settings(locals()) # put this last
